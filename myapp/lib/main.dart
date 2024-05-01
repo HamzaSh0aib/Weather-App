@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/Screens/home.dart';
+import 'package:myapp/Screens/search.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Wheather App',
-      home: HomePage(),
+      home: SearchPage(),
     );
   }
 }

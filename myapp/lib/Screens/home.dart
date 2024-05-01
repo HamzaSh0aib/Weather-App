@@ -6,7 +6,8 @@ import 'package:weather/weather.dart';
 import 'package:intl/intl.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  String? CityName;
+  HomePage({super.key, required this.CityName});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -19,7 +20,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    wf.currentWeatherByCityName('Islamabad').then((w) {
+    wf.currentWeatherByCityName(widget.CityName.toString()).then((w) {
       setState(() {
         wheather = w;
       });
@@ -62,7 +63,7 @@ class _HomePageState extends State<HomePage> {
   Widget locationHeader() {
     return Text(
       wheather?.areaName ?? '',
-      style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
+      style: TextStyle(fontSize: 25, fontWeight: FontWeight.w800),
     );
   }
 
